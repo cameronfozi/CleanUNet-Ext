@@ -1,0 +1,350 @@
+num_gpus: 2
+['train.py', '--config=configs/DNS-large-full-watermark.json', '--rank=0', '--group_name=group_2025_11_01-170034']
+['train.py', '--config=configs/DNS-large-full-watermark.json', '--rank=1', '--group_name=group_2025_11_01-170034']
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+WATERMARK WEIGHT IN DATASET: 0.05
+WATERMARK WEIGHT IN UTIL: 0.05
+exp_path: DNS-large-full-watermark
+Initializing Distributed
+ckpt_directory:  ./exp/DNS-large-full-watermark/checkpoint
+Data loaded
+CleanUNet Parameters: 46.071937M;  
+No valid checkpoint model found, start training from initialization.
+iteration: 0 	reduced loss: 2.4584782 	loss: 2.4739847	decoding_loss: 0.9950740
+iteration: 500 	reduced loss: 1.6213834 	loss: 1.5991374	decoding_loss: 0.1831036
+iteration: 1000 	reduced loss: 1.5840571 	loss: 1.5236218	decoding_loss: 0.1460863
+iteration: 1500 	reduced loss: 1.4259865 	loss: 1.3625001	decoding_loss: 0.1100210
+iteration: 2000 	reduced loss: 1.4312508 	loss: 1.4267274	decoding_loss: 0.1535619
+iteration: 2500 	reduced loss: 1.4283612 	loss: 1.3619927	decoding_loss: 0.0737929
+iteration: 3000 	reduced loss: 1.3940036 	loss: 1.3443991	decoding_loss: 0.1232884
+iteration: 3500 	reduced loss: 1.3356051 	loss: 1.3534513	decoding_loss: 0.0943227
+iteration: 4000 	reduced loss: 1.3276110 	loss: 1.3279712	decoding_loss: 0.0851601
+iteration: 4500 	reduced loss: 1.2803805 	loss: 1.2606570	decoding_loss: 0.0675055
+iteration: 5000 	reduced loss: 1.2776533 	loss: 1.3148220	decoding_loss: 0.0463595
+iteration: 5500 	reduced loss: 1.2624447 	loss: 1.2689167	decoding_loss: 0.0764983
+iteration: 6000 	reduced loss: 1.2660451 	loss: 1.2882442	decoding_loss: 0.0613946
+iteration: 6500 	reduced loss: 1.3064606 	loss: 1.3504038	decoding_loss: 0.1206132
+iteration: 7000 	reduced loss: 1.1392138 	loss: 1.1717457	decoding_loss: 0.2108595
+iteration: 7500 	reduced loss: 1.0736172 	loss: 1.0283540	decoding_loss: 0.0952308
+iteration: 8000 	reduced loss: 1.0586746 	loss: 1.0336487	decoding_loss: 0.1227195
+iteration: 8500 	reduced loss: 0.9593844 	loss: 0.9461738	decoding_loss: 0.0578824
+iteration: 9000 	reduced loss: 1.1762545 	loss: 1.1700864	decoding_loss: 0.1005410
+iteration: 9500 	reduced loss: 1.1782403 	loss: 1.2735274	decoding_loss: 0.2527159
+iteration: 10000 	reduced loss: 1.2089658 	loss: 1.3471222	decoding_loss: 0.2979620
+model at iteration 10000 is saved
+iteration: 10500 	reduced loss: 1.2849270 	loss: 1.3464130	decoding_loss: 0.2838126
+iteration: 11000 	reduced loss: 1.2763335 	loss: 1.0122106	decoding_loss: 0.1860777
+iteration: 11500 	reduced loss: 1.0347915 	loss: 1.0516841	decoding_loss: 0.1624619
+iteration: 12000 	reduced loss: 1.3172020 	loss: 1.3511807	decoding_loss: 0.3981617
+iteration: 12500 	reduced loss: 1.1526942 	loss: 1.2492259	decoding_loss: 0.2727546
+iteration: 13000 	reduced loss: 1.2052512 	loss: 1.1675265	decoding_loss: 0.2560011
+iteration: 13500 	reduced loss: 1.0283883 	loss: 0.9741967	decoding_loss: 0.1095719
+iteration: 14000 	reduced loss: 1.1163607 	loss: 1.0724480	decoding_loss: 0.2210234
+iteration: 14500 	reduced loss: 1.1767290 	loss: 1.1545136	decoding_loss: 0.2077888
+iteration: 15000 	reduced loss: 1.0163431 	loss: 1.0686734	decoding_loss: 0.2052044
+iteration: 15500 	reduced loss: 1.1369443 	loss: 1.2725257	decoding_loss: 0.2989481
+iteration: 16000 	reduced loss: 1.1251783 	loss: 1.0498143	decoding_loss: 0.2493958
+iteration: 16500 	reduced loss: 1.0273514 	loss: 0.9452540	decoding_loss: 0.1833460
+iteration: 17000 	reduced loss: 1.1651175 	loss: 1.4200283	decoding_loss: 0.3253833
+iteration: 17500 	reduced loss: 1.3871286 	loss: 1.4687054	decoding_loss: 0.3283156
+iteration: 18000 	reduced loss: 1.0573159 	loss: 1.0476574	decoding_loss: 0.2088741
+iteration: 18500 	reduced loss: 0.9197128 	loss: 1.1310707	decoding_loss: 0.3188958
+iteration: 19000 	reduced loss: 0.9660944 	loss: 0.9493040	decoding_loss: 0.1985952
+iteration: 19500 	reduced loss: 0.8359910 	loss: 0.8992448	decoding_loss: 0.1769294
+iteration: 20000 	reduced loss: 0.8805673 	loss: 1.0632178	decoding_loss: 0.2342032
+model at iteration 20000 is saved
+iteration: 20500 	reduced loss: 1.1604846 	loss: 1.0813938	decoding_loss: 0.1990975
+iteration: 21000 	reduced loss: 0.6555984 	loss: 0.6489333	decoding_loss: 0.1164017
+iteration: 21500 	reduced loss: 1.0524988 	loss: 0.8997282	decoding_loss: 0.2153854
+iteration: 22000 	reduced loss: 0.8809085 	loss: 0.8478600	decoding_loss: 0.1633719
+iteration: 22500 	reduced loss: 0.6911074 	loss: 0.7011141	decoding_loss: 0.1189797
+iteration: 23000 	reduced loss: 0.7764994 	loss: 0.6520092	decoding_loss: 0.0774996
+iteration: 23500 	reduced loss: 1.0056659 	loss: 1.0569752	decoding_loss: 0.2215426
+iteration: 24000 	reduced loss: 0.9254228 	loss: 0.9645271	decoding_loss: 0.1867598
+iteration: 24500 	reduced loss: 0.7926824 	loss: 0.8563817	decoding_loss: 0.1640337
+iteration: 25000 	reduced loss: 0.8869316 	loss: 0.9060949	decoding_loss: 0.1847495
+iteration: 25500 	reduced loss: 0.7434517 	loss: 0.6685671	decoding_loss: 0.1123522
+iteration: 26000 	reduced loss: 0.6887136 	loss: 0.7289305	decoding_loss: 0.0970112
+iteration: 26500 	reduced loss: 0.7684793 	loss: 0.8327501	decoding_loss: 0.1960791
+iteration: 27000 	reduced loss: 0.9278771 	loss: 0.8364581	decoding_loss: 0.1583299
+iteration: 27500 	reduced loss: 0.7242875 	loss: 0.6755005	decoding_loss: 0.1358869
+iteration: 28000 	reduced loss: 0.7740734 	loss: 0.6782166	decoding_loss: 0.1068211
+iteration: 28500 	reduced loss: 1.0468322 	loss: 1.1052414	decoding_loss: 0.2517907
+iteration: 29000 	reduced loss: 0.9054980 	loss: 0.9653178	decoding_loss: 0.1269252
+iteration: 29500 	reduced loss: 0.7774251 	loss: 0.8757555	decoding_loss: 0.1993477
+iteration: 30000 	reduced loss: 0.8107061 	loss: 0.7427940	decoding_loss: 0.1675790
+model at iteration 30000 is saved
+iteration: 30500 	reduced loss: 0.8427193 	loss: 0.6825967	decoding_loss: 0.0949255
+iteration: 31000 	reduced loss: 0.7190721 	loss: 0.8309601	decoding_loss: 0.2090519
+iteration: 31500 	reduced loss: 0.8537128 	loss: 0.6934953	decoding_loss: 0.1174603
+iteration: 32000 	reduced loss: 0.7131675 	loss: 0.6835788	decoding_loss: 0.1103566
+iteration: 32500 	reduced loss: 0.7310783 	loss: 0.6187060	decoding_loss: 0.1058746
+iteration: 33000 	reduced loss: 0.8233476 	loss: 0.7798870	decoding_loss: 0.1266101
+iteration: 33500 	reduced loss: 0.9335877 	loss: 1.0452743	decoding_loss: 0.1982873
+iteration: 34000 	reduced loss: 0.7617308 	loss: 0.8584661	decoding_loss: 0.1696077
+iteration: 34500 	reduced loss: 0.7840748 	loss: 0.9153122	decoding_loss: 0.1595701
+iteration: 35000 	reduced loss: 0.6519712 	loss: 0.6323007	decoding_loss: 0.1154968
+iteration: 35500 	reduced loss: 0.7214578 	loss: 0.8773440	decoding_loss: 0.1757979
+iteration: 36000 	reduced loss: 0.5907735 	loss: 0.6982701	decoding_loss: 0.1408125
+iteration: 36500 	reduced loss: 0.7276575 	loss: 0.5418435	decoding_loss: 0.0953570
+iteration: 37000 	reduced loss: 0.6493578 	loss: 0.5366921	decoding_loss: 0.0698394
+iteration: 37500 	reduced loss: 0.7163006 	loss: 0.5165308	decoding_loss: 0.0963243
+iteration: 38000 	reduced loss: 0.8463391 	loss: 0.9867386	decoding_loss: 0.1671545
+iteration: 38500 	reduced loss: 0.7632406 	loss: 0.7718479	decoding_loss: 0.1252892
+iteration: 39000 	reduced loss: 0.9815340 	loss: 1.1020663	decoding_loss: 0.2521461
+iteration: 39500 	reduced loss: 1.2286764 	loss: 1.1438172	decoding_loss: 0.3518110
+iteration: 40000 	reduced loss: 1.0423450 	loss: 1.2152797	decoding_loss: 0.2883720
+model at iteration 40000 is saved
+iteration: 40500 	reduced loss: 0.8081061 	loss: 0.9011393	decoding_loss: 0.1696896
+iteration: 41000 	reduced loss: 1.0764035 	loss: 0.9874987	decoding_loss: 0.1735481
+iteration: 41500 	reduced loss: 4.2938242 	loss: 4.4022503	decoding_loss: 1.9139805
+iteration: 42000 	reduced loss: 1.7951634 	loss: 1.8589953	decoding_loss: 0.6011068
+iteration: 42500 	reduced loss: 1.6792147 	loss: 1.6816546	decoding_loss: 0.4442240
+iteration: 43000 	reduced loss: 1.7063129 	loss: 1.7699380	decoding_loss: 0.4611466
+iteration: 43500 	reduced loss: 1.5549545 	loss: 1.5864407	decoding_loss: 0.3873123
+iteration: 44000 	reduced loss: 1.5549417 	loss: 1.5644791	decoding_loss: 0.4377424
+iteration: 44500 	reduced loss: 1.7310458 	loss: 1.4022100	decoding_loss: 0.3109477
+iteration: 45000 	reduced loss: 1.8827480 	loss: 1.6182306	decoding_loss: 0.4094469
+iteration: 45500 	reduced loss: 1.6217959 	loss: 1.8402882	decoding_loss: 0.5842950
+iteration: 46000 	reduced loss: 1.3839729 	loss: 1.3615628	decoding_loss: 0.2978375
+iteration: 46500 	reduced loss: 1.2385001 	loss: 1.1045924	decoding_loss: 0.1529783
+iteration: 47000 	reduced loss: 1.2369577 	loss: 1.1911149	decoding_loss: 0.2246616
+iteration: 47500 	reduced loss: 1.1601865 	loss: 1.1010710	decoding_loss: 0.2295408
+iteration: 48000 	reduced loss: 1.9333025 	loss: 1.7682621	decoding_loss: 0.4722442
+iteration: 48500 	reduced loss: 1.5996561 	loss: 1.3945668	decoding_loss: 0.3618780
+iteration: 49000 	reduced loss: 1.5211835 	loss: 1.5026017	decoding_loss: 0.4359710
+iteration: 49500 	reduced loss: 1.5255136 	loss: 1.5879226	decoding_loss: 0.6155982
+iteration: 50000 	reduced loss: 1.2253678 	loss: 1.2199030	decoding_loss: 0.5019414
+model at iteration 50000 is saved
+iteration: 50500 	reduced loss: 1.2073011 	loss: 1.3265189	decoding_loss: 0.4503296
+iteration: 51000 	reduced loss: 1.5354977 	loss: 1.3109591	decoding_loss: 0.3369344
+iteration: 51500 	reduced loss: 0.9924293 	loss: 0.7954456	decoding_loss: 0.2118926
+iteration: 52000 	reduced loss: 1.2077442 	loss: 1.1360551	decoding_loss: 0.3405950
+iteration: 52500 	reduced loss: 1.2383106 	loss: 1.2500030	decoding_loss: 0.4629531
+iteration: 53000 	reduced loss: 1.7228585 	loss: 1.6635382	decoding_loss: 0.6151426
+iteration: 53500 	reduced loss: 1.4615967 	loss: 1.4839513	decoding_loss: 0.6298189
+iteration: 54000 	reduced loss: 0.9900817 	loss: 0.9261177	decoding_loss: 0.4247656
+iteration: 54500 	reduced loss: 1.3741698 	loss: 1.2033631	decoding_loss: 0.4404759
+iteration: 55000 	reduced loss: 0.9976701 	loss: 0.9002716	decoding_loss: 0.3303485
+iteration: 55500 	reduced loss: 1.0071726 	loss: 1.0122635	decoding_loss: 0.2760825
+iteration: 56000 	reduced loss: 1.1934452 	loss: 0.9358979	decoding_loss: 0.3476888
+iteration: 56500 	reduced loss: 1.2152388 	loss: 1.4385060	decoding_loss: 0.5690741
+iteration: 57000 	reduced loss: 1.2293427 	loss: 1.6830578	decoding_loss: 0.7015386
+iteration: 57500 	reduced loss: 1.4885719 	loss: 1.5750773	decoding_loss: 0.4863228
+iteration: 58000 	reduced loss: 1.0338230 	loss: 0.8270996	decoding_loss: 0.3578893
+iteration: 58500 	reduced loss: 1.2406075 	loss: 1.2618408	decoding_loss: 0.4664228
+iteration: 59000 	reduced loss: 1.9454966 	loss: 1.9538782	decoding_loss: 0.7503831
+iteration: 59500 	reduced loss: 1.5028527 	loss: 1.7471534	decoding_loss: 0.8340066
+iteration: 60000 	reduced loss: 1.2703696 	loss: 1.2573376	decoding_loss: 0.4400619
+model at iteration 60000 is saved
+iteration: 60500 	reduced loss: 1.6994433 	loss: 1.3207603	decoding_loss: 0.3740466
+iteration: 61000 	reduced loss: 1.3206751 	loss: 1.4953333	decoding_loss: 0.7493413
+iteration: 61500 	reduced loss: 1.6518986 	loss: 1.6491371	decoding_loss: 0.6929795
+iteration: 62000 	reduced loss: 1.1412845 	loss: 1.1289742	decoding_loss: 0.3544914
+iteration: 62500 	reduced loss: 1.1261240 	loss: 1.3947765	decoding_loss: 0.5287489
+iteration: 63000 	reduced loss: 1.3533936 	loss: 1.0650197	decoding_loss: 0.4499186
+iteration: 63500 	reduced loss: 1.0367568 	loss: 1.0537639	decoding_loss: 0.4021786
+iteration: 64000 	reduced loss: 1.3780661 	loss: 2.1030412	decoding_loss: 0.9175057
+iteration: 64500 	reduced loss: 1.8685498 	loss: 2.1318092	decoding_loss: 0.7200937
+iteration: 65000 	reduced loss: 1.3222836 	loss: 1.2170639	decoding_loss: 0.3569869
+iteration: 65500 	reduced loss: 1.0758457 	loss: 1.2840887	decoding_loss: 0.4241254
+iteration: 66000 	reduced loss: 1.4525639 	loss: 1.1363391	decoding_loss: 0.4342604
+iteration: 66500 	reduced loss: 1.0909709 	loss: 0.9314986	decoding_loss: 0.2382001
+iteration: 67000 	reduced loss: 1.2971382 	loss: 1.4560204	decoding_loss: 0.4944940
+iteration: 67500 	reduced loss: 1.8090204 	loss: 1.7876675	decoding_loss: 0.6320326
+iteration: 68000 	reduced loss: 0.9282226 	loss: 0.7596673	decoding_loss: 0.1939563
+iteration: 68500 	reduced loss: 1.4701335 	loss: 1.3020416	decoding_loss: 0.3824869
+iteration: 69000 	reduced loss: 1.2735001 	loss: 1.2179772	decoding_loss: 0.3796407
+iteration: 69500 	reduced loss: 0.9088693 	loss: 0.7001606	decoding_loss: 0.1643867
+iteration: 70000 	reduced loss: 1.2393820 	loss: 1.2292039	decoding_loss: 0.3777098
+model at iteration 70000 is saved
+iteration: 70500 	reduced loss: 1.4460149 	loss: 1.6821671	decoding_loss: 0.6364615
+iteration: 71000 	reduced loss: 0.9184536 	loss: 0.9916540	decoding_loss: 0.2129545
+iteration: 71500 	reduced loss: 1.2955303 	loss: 1.7976918	decoding_loss: 0.9448069
+iteration: 72000 	reduced loss: 1.2192080 	loss: 1.3543915	decoding_loss: 0.4089437
+iteration: 72500 	reduced loss: 0.9712838 	loss: 0.9348633	decoding_loss: 0.2053114
+iteration: 73000 	reduced loss: 0.9159587 	loss: 1.1171101	decoding_loss: 0.3661399
+iteration: 73500 	reduced loss: 0.9020828 	loss: 0.9683903	decoding_loss: 0.3124875
+iteration: 74000 	reduced loss: 1.0691769 	loss: 0.9322271	decoding_loss: 0.2020270
+iteration: 74500 	reduced loss: 1.0464114 	loss: 0.8484614	decoding_loss: 0.2331467
+iteration: 75000 	reduced loss: 1.4882478 	loss: 1.3139029	decoding_loss: 0.2890979
+iteration: 75500 	reduced loss: 1.8132478 	loss: 1.9206901	decoding_loss: 0.8377982
+iteration: 76000 	reduced loss: 1.3034796 	loss: 1.3466674	decoding_loss: 0.3730911
+iteration: 76500 	reduced loss: 1.2406414 	loss: 1.2798369	decoding_loss: 0.3522560
+iteration: 77000 	reduced loss: 1.6213646 	loss: 1.6015625	decoding_loss: 0.3634194
+iteration: 77500 	reduced loss: 1.3495970 	loss: 0.9868106	decoding_loss: 0.3477120
+iteration: 78000 	reduced loss: 1.7385719 	loss: 1.6461630	decoding_loss: 0.4515912
+iteration: 78500 	reduced loss: 1.6017363 	loss: 1.3930053	decoding_loss: 0.3963122
+iteration: 79000 	reduced loss: 2.5869932 	loss: 2.5483096	decoding_loss: 0.8202818
+iteration: 79500 	reduced loss: 1.6555222 	loss: 1.6162348	decoding_loss: 0.4827792
+iteration: 80000 	reduced loss: 1.7787354 	loss: 1.8902134	decoding_loss: 0.6792595
+model at iteration 80000 is saved
+iteration: 80500 	reduced loss: 1.7143476 	loss: 1.9999535	decoding_loss: 0.6295776
+iteration: 81000 	reduced loss: 1.6755819 	loss: 1.9943206	decoding_loss: 0.7556708
+iteration: 81500 	reduced loss: 1.5886917 	loss: 1.7473474	decoding_loss: 0.5605629
+iteration: 82000 	reduced loss: 1.2662221 	loss: 1.2758869	decoding_loss: 0.2751888
+iteration: 82500 	reduced loss: 1.4491739 	loss: 1.5711269	decoding_loss: 0.4359742
+iteration: 83000 	reduced loss: 1.2215347 	loss: 1.2681587	decoding_loss: 0.2599521
+iteration: 83500 	reduced loss: 1.4504821 	loss: 1.2542213	decoding_loss: 0.3780621
+iteration: 84000 	reduced loss: 1.3281734 	loss: 1.1990384	decoding_loss: 0.2690733
+iteration: 84500 	reduced loss: 1.5790679 	loss: 1.3833630	decoding_loss: 0.3438790
+iteration: 85000 	reduced loss: 1.6160164 	loss: 1.7065814	decoding_loss: 0.4174208
+iteration: 85500 	reduced loss: 1.6686223 	loss: 1.8604033	decoding_loss: 0.6100146
+iteration: 86000 	reduced loss: 1.4815081 	loss: 1.3921094	decoding_loss: 0.2882315
+iteration: 86500 	reduced loss: 1.5267017 	loss: 1.3857576	decoding_loss: 0.3773002
+iteration: 87000 	reduced loss: 1.4906968 	loss: 1.8058486	decoding_loss: 0.6161410
+iteration: 87500 	reduced loss: 1.1682291 	loss: 1.1787744	decoding_loss: 0.2667325
+iteration: 88000 	reduced loss: 1.3056902 	loss: 1.1595927	decoding_loss: 0.3130177
+iteration: 88500 	reduced loss: 1.4753168 	loss: 1.3710750	decoding_loss: 0.3831108
+iteration: 89000 	reduced loss: 1.1077777 	loss: 1.1578066	decoding_loss: 0.3380311
+iteration: 89500 	reduced loss: 1.0150018 	loss: 0.8521781	decoding_loss: 0.1390129
+iteration: 90000 	reduced loss: 1.1899027 	loss: 1.3839502	decoding_loss: 0.5022689
+model at iteration 90000 is saved
+iteration: 90500 	reduced loss: 1.0270479 	loss: 1.1324461	decoding_loss: 0.2857895
+iteration: 91000 	reduced loss: 1.3404956 	loss: 1.5773282	decoding_loss: 0.5287075
+iteration: 91500 	reduced loss: 1.1874027 	loss: 0.9387453	decoding_loss: 0.2032239
+iteration: 92000 	reduced loss: 1.5519997 	loss: 1.1797632	decoding_loss: 0.2408212
+iteration: 92500 	reduced loss: 1.6026562 	loss: 1.7721796	decoding_loss: 0.6707900
+iteration: 93000 	reduced loss: 0.9828659 	loss: 0.9679937	decoding_loss: 0.1960947
+iteration: 93500 	reduced loss: 1.0538838 	loss: 0.9864721	decoding_loss: 0.2598000
+iteration: 94000 	reduced loss: 1.2280416 	loss: 1.2691699	decoding_loss: 0.3040116
+iteration: 94500 	reduced loss: 1.2433977 	loss: 1.0329754	decoding_loss: 0.3286138
+iteration: 95000 	reduced loss: 1.5437654 	loss: 1.3766134	decoding_loss: 0.5272962
+iteration: 95500 	reduced loss: 1.2691426 	loss: 1.2748628	decoding_loss: 0.3635726
+iteration: 96000 	reduced loss: 1.5522006 	loss: 1.6723397	decoding_loss: 0.7471551
+iteration: 96500 	reduced loss: 1.4120715 	loss: 1.4041102	decoding_loss: 0.4735397
+iteration: 97000 	reduced loss: 1.0697849 	loss: 0.9415430	decoding_loss: 0.2537633
+iteration: 97500 	reduced loss: 1.1894968 	loss: 1.2548323	decoding_loss: 0.3983253
+iteration: 98000 	reduced loss: 1.4792223 	loss: 1.2874923	decoding_loss: 0.3350704
+iteration: 98500 	reduced loss: 1.0529025 	loss: 1.0595572	decoding_loss: 0.3115359
+iteration: 99000 	reduced loss: 1.2361352 	loss: 1.4020951	decoding_loss: 0.4977735
+iteration: 99500 	reduced loss: 1.2391659 	loss: 1.2911555	decoding_loss: 0.3195678
+iteration: 100000 	reduced loss: 1.2813003 	loss: 1.4772265	decoding_loss: 0.4526725
+model at iteration 100000 is saved
+iteration: 100500 	reduced loss: 1.3581580 	loss: 1.5958794	decoding_loss: 0.5336548
+iteration: 101000 	reduced loss: 1.0105441 	loss: 0.9764484	decoding_loss: 0.3682195
+iteration: 101500 	reduced loss: 1.1790800 	loss: 0.9734258	decoding_loss: 0.2443364
+iteration: 102000 	reduced loss: 1.0835841 	loss: 0.9237933	decoding_loss: 0.2922381
+iteration: 102500 	reduced loss: 0.9408063 	loss: 0.8783230	decoding_loss: 0.1750399
+iteration: 103000 	reduced loss: 1.2129476 	loss: 1.0371795	decoding_loss: 0.2148357
+iteration: 103500 	reduced loss: 1.2905231 	loss: 1.3637065	decoding_loss: 0.4668550
+iteration: 104000 	reduced loss: 1.3664724 	loss: 1.5927322	decoding_loss: 0.5272701
+iteration: 104500 	reduced loss: 1.5397351 	loss: 1.3400246	decoding_loss: 0.3680241
+iteration: 105000 	reduced loss: 1.2231541 	loss: 0.9228348	decoding_loss: 0.1716190
+iteration: 105500 	reduced loss: 1.3202128 	loss: 1.1868029	decoding_loss: 0.3482902
+iteration: 106000 	reduced loss: 1.5982141 	loss: 1.5819122	decoding_loss: 0.5156285
+iteration: 106500 	reduced loss: 1.3321099 	loss: 1.5717177	decoding_loss: 0.5208480
+iteration: 107000 	reduced loss: 1.1881442 	loss: 1.1311966	decoding_loss: 0.3171689
+iteration: 107500 	reduced loss: 1.3607614 	loss: 1.1257080	decoding_loss: 0.2622527
+iteration: 108000 	reduced loss: 1.2643163 	loss: 1.2696766	decoding_loss: 0.3638919
+iteration: 108500 	reduced loss: 1.3844507 	loss: 1.3143876	decoding_loss: 0.3770588
+iteration: 109000 	reduced loss: 1.1054295 	loss: 1.1740234	decoding_loss: 0.3636109
+iteration: 109500 	reduced loss: 1.2704008 	loss: 1.4934409	decoding_loss: 0.5631531
+iteration: 110000 	reduced loss: 1.1975563 	loss: 1.1333926	decoding_loss: 0.3437063
+model at iteration 110000 is saved
+iteration: 110500 	reduced loss: 1.3314638 	loss: 1.2100070	decoding_loss: 0.3407667
+iteration: 111000 	reduced loss: 1.1776404 	loss: 1.6037110	decoding_loss: 0.4268487
+iteration: 111500 	reduced loss: 1.6567240 	loss: 1.7850076	decoding_loss: 0.5412831
+iteration: 112000 	reduced loss: 1.2797093 	loss: 1.2230327	decoding_loss: 0.3502644
+iteration: 112500 	reduced loss: 1.0474720 	loss: 1.3464053	decoding_loss: 0.4591745
+iteration: 113000 	reduced loss: 1.0874164 	loss: 1.0083470	decoding_loss: 0.2538441
+iteration: 113500 	reduced loss: 1.0285455 	loss: 0.9758301	decoding_loss: 0.2161073
+iteration: 114000 	reduced loss: 1.2310503 	loss: 1.5356641	decoding_loss: 0.5684800
+iteration: 114500 	reduced loss: 1.3345938 	loss: 1.3060412	decoding_loss: 0.2870857
+iteration: 115000 	reduced loss: 0.8610841 	loss: 0.8060362	decoding_loss: 0.1485046
+iteration: 115500 	reduced loss: 1.4473604 	loss: 1.3050492	decoding_loss: 0.4155453
+iteration: 116000 	reduced loss: 1.3103840 	loss: 1.2645417	decoding_loss: 0.3730880
+iteration: 116500 	reduced loss: 0.9051687 	loss: 0.8266886	decoding_loss: 0.2292418
+iteration: 117000 	reduced loss: 1.0509541 	loss: 0.8108470	decoding_loss: 0.1845266
+iteration: 117500 	reduced loss: 1.0245352 	loss: 1.0817246	decoding_loss: 0.2364043
+iteration: 118000 	reduced loss: 1.1255126 	loss: 1.1012536	decoding_loss: 0.3027600
+iteration: 118500 	reduced loss: 1.1155217 	loss: 1.2410214	decoding_loss: 0.3689288
+iteration: 119000 	reduced loss: 1.2579871 	loss: 1.3874688	decoding_loss: 0.4116679
+iteration: 119500 	reduced loss: 0.9656485 	loss: 0.8833048	decoding_loss: 0.2078116
+iteration: 120000 	reduced loss: 1.0050319 	loss: 1.1512852	decoding_loss: 0.3559725
+model at iteration 120000 is saved
+iteration: 120500 	reduced loss: 0.9098594 	loss: 1.0198963	decoding_loss: 0.3002494
+iteration: 121000 	reduced loss: 0.9986252 	loss: 0.8323665	decoding_loss: 0.1744667
+iteration: 121500 	reduced loss: 0.9059027 	loss: 0.8970424	decoding_loss: 0.1627151
+iteration: 122000 	reduced loss: 1.0407493 	loss: 1.0481786	decoding_loss: 0.3330781
+iteration: 122500 	reduced loss: 1.3702635 	loss: 1.4105501	decoding_loss: 0.4934878
+iteration: 123000 	reduced loss: 0.9713297 	loss: 0.7471778	decoding_loss: 0.1210485
+iteration: 123500 	reduced loss: 1.3570166 	loss: 1.5503207	decoding_loss: 0.4277902
+iteration: 124000 	reduced loss: 1.4270574 	loss: 1.2507277	decoding_loss: 0.3082344
+iteration: 124500 	reduced loss: 1.2243602 	loss: 0.9403028	decoding_loss: 0.2446912
+iteration: 125000 	reduced loss: 1.0084972 	loss: 1.0639259	decoding_loss: 0.2873412
+iteration: 125500 	reduced loss: 1.1918362 	loss: 0.8620624	decoding_loss: 0.1986267
+iteration: 126000 	reduced loss: 1.1151572 	loss: 1.0682874	decoding_loss: 0.3628829
+iteration: 126500 	reduced loss: 1.0813723 	loss: 0.9171546	decoding_loss: 0.2429172
+iteration: 127000 	reduced loss: 1.1602136 	loss: 1.0845149	decoding_loss: 0.3663290
+iteration: 127500 	reduced loss: 1.2116559 	loss: 1.3195968	decoding_loss: 0.3035128
+iteration: 128000 	reduced loss: 1.1839132 	loss: 1.5220110	decoding_loss: 0.6183304
+iteration: 128500 	reduced loss: 1.1542146 	loss: 1.2870555	decoding_loss: 0.3454442
+iteration: 129000 	reduced loss: 0.9674972 	loss: 1.0766771	decoding_loss: 0.2729692
+iteration: 129500 	reduced loss: 1.1727896 	loss: 1.2707877	decoding_loss: 0.4145426
+iteration: 130000 	reduced loss: 0.8889816 	loss: 0.9877739	decoding_loss: 0.3084251
+model at iteration 130000 is saved
+iteration: 130500 	reduced loss: 0.9510256 	loss: 0.7619953	decoding_loss: 0.2233448
+iteration: 131000 	reduced loss: 0.9964356 	loss: 0.7599024	decoding_loss: 0.1773156
+iteration: 131500 	reduced loss: 1.1281874 	loss: 0.8631290	decoding_loss: 0.2301394
+iteration: 132000 	reduced loss: 1.0826212 	loss: 1.2030292	decoding_loss: 0.3488865
+iteration: 132500 	reduced loss: 1.2819811 	loss: 1.3865730	decoding_loss: 0.3854782
+iteration: 133000 	reduced loss: 1.1309233 	loss: 1.1071705	decoding_loss: 0.2333447
+iteration: 133500 	reduced loss: 1.1731710 	loss: 1.0567288	decoding_loss: 0.2365823
+iteration: 134000 	reduced loss: 1.5457608 	loss: 1.9369638	decoding_loss: 0.6092820
+iteration: 134500 	reduced loss: 0.8820691 	loss: 1.1416177	decoding_loss: 0.3042601
+iteration: 135000 	reduced loss: 0.7723316 	loss: 0.7906353	decoding_loss: 0.1592286
+iteration: 135500 	reduced loss: 1.1131499 	loss: 1.0885993	decoding_loss: 0.3131108
+iteration: 136000 	reduced loss: 1.1973404 	loss: 1.1670289	decoding_loss: 0.3175499
+iteration: 136500 	reduced loss: 0.9323299 	loss: 1.1371000	decoding_loss: 0.2056817
+iteration: 137000 	reduced loss: 1.1503420 	loss: 1.2589028	decoding_loss: 0.3638270
+iteration: 137500 	reduced loss: 1.0341743 	loss: 0.9921367	decoding_loss: 0.2959405
+iteration: 138000 	reduced loss: 1.0786049 	loss: 1.1410888	decoding_loss: 0.3264806
+iteration: 138500 	reduced loss: 1.1569099 	loss: 1.0271120	decoding_loss: 0.1833746
+iteration: 139000 	reduced loss: 1.4281154 	loss: 1.2623770	decoding_loss: 0.3216673
+iteration: 139500 	reduced loss: 1.4185979 	loss: 1.4568900	decoding_loss: 0.4280001
+iteration: 140000 	reduced loss: 1.0691388 	loss: 1.2345545	decoding_loss: 0.3282059
+model at iteration 140000 is saved
+mobilex:3601078:3601078 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker,virbr0
+mobilex:3601078:3601078 [0] NCCL INFO Bootstrap: Using enp68s0:128.59.19.230<0>
+mobilex:3601078:3601078 [0] NCCL INFO cudaDriverVersion 12050
+mobilex:3601078:3601078 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+mobilex:3601078:3601078 [0] NCCL INFO Comm config Blocking set to 1
+mobilex:3601078:3601427 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+mobilex:3601078:3601427 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+mobilex:3601078:3601427 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^lo,docker,virbr0
+mobilex:3601078:3601427 [0] NCCL INFO NET/Socket : Using [0]enp68s0:128.59.19.230<0> [1]wlp69s0:192.168.0.9<0> [2]zt6ovqbhyl:10.147.20.1<0>
+mobilex:3601078:3601427 [0] NCCL INFO Initialized NET plugin Socket
+mobilex:3601078:3601427 [0] NCCL INFO Assigned NET plugin Socket to comm
+mobilex:3601078:3601427 [0] NCCL INFO Using network Socket
+mobilex:3601078:3601427 [0] NCCL INFO ncclCommInitRankConfig comm 0x5f65113b8f80 rank 0 nranks 2 cudaDev 0 nvmlDev 2 busId 4c000 commId 0x6f82470af1f9172e - Init START
+mobilex:3601078:3601427 [0] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+mobilex:3601078:3601427 [0] NCCL INFO Bootstrap timings total 0.010502 (create 0.000030, send 0.000144, recv 0.002024, ring 0.007851, delay 0.000000)
+mobilex:3601078:3601427 [0] NCCL INFO comm 0x5f65113b8f80 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+mobilex:3601078:3601427 [0] NCCL INFO Channel 00/02 : 0 1
+mobilex:3601078:3601427 [0] NCCL INFO Channel 01/02 : 0 1
+mobilex:3601078:3601427 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+mobilex:3601078:3601427 [0] NCCL INFO P2P Chunksize set to 131072
+mobilex:3601078:3601427 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+mobilex:3601078:3601427 [0] NCCL INFO Check P2P Type isAllDirectP2p 1 directMode 0
+mobilex:3601078:3601432 [0] NCCL INFO [Proxy Service] Device 0 CPU core 21
+mobilex:3601078:3601434 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 14
+mobilex:3601078:3601427 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+mobilex:3601078:3601427 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+mobilex:3601078:3601427 [0] NCCL INFO CC Off, workFifoBytes 1048576
+mobilex:3601078:3601427 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+mobilex:3601078:3601427 [0] NCCL INFO ncclCommInitRankConfig comm 0x5f65113b8f80 rank 0 nranks 2 cudaDev 0 nvmlDev 2 busId 4c000 commId 0x6f82470af1f9172e - Init COMPLETE
+mobilex:3601078:3601427 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 2 total 0.15 (kernels 0.12, alloc 0.00, bootstrap 0.01, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+mobilex:3601078:3601435 [0] NCCL INFO Channel 00/0 : 0[2] -> 1[3] via P2P/CUMEM
+mobilex:3601078:3601435 [0] NCCL INFO Channel 01/0 : 0[2] -> 1[3] via P2P/CUMEM
+mobilex:3601078:3601435 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+[rank0]:[W1102 19:53:37.360064581 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:64 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:81 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:863 -> 3
+mobilex:3601078:3601432 [0] NCCL INFO misc/socket.cc:915 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:64 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:81 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO misc/socket.cc:863 -> 3
+mobilex:3601078:3601432 [0] NCCL INFO misc/socket.cc:915 -> 3
+mobilex:3601078:3890509 [0] NCCL INFO comm 0x5f65113b8f80 rank 0 nranks 2 cudaDev 0 busId 4c000 - Abort COMPLETE

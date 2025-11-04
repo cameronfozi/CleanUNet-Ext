@@ -1,0 +1,52 @@
+nohup: ignoring input
+num_gpus: 1
+['train.py', '--config=configs/DNS-large-full-replication-2.json', '--rank=0', '--group_name=group_2025_11_03-174103']
+WATERMARK WEIGHT IN DATASET: 0
+WATERMARK WEIGHT IN UTIL: 0
+WATERMARK WEIGHT IN TRAIN: 0
+exp_path: DNS-large-full-replication-2
+ckpt_directory:  ./exp/DNS-large-full-replication-2/checkpoint
+Data loaded
+CleanUNet Parameters: 46.071937M;  
+No valid checkpoint model found, start training from initialization.
+iteration: 0 	reduced loss: 1.4504793 	loss: 1.4504793
+iteration: 500 	reduced loss: 1.1275198 	loss: 1.1275198
+iteration: 1000 	reduced loss: 0.9300441 	loss: 0.9300441
+iteration: 1500 	reduced loss: 0.6311035 	loss: 0.6311035
+iteration: 2000 	reduced loss: 0.6785938 	loss: 0.6785938
+iteration: 2500 	reduced loss: 0.7747135 	loss: 0.7747135
+iteration: 3000 	reduced loss: 0.6514156 	loss: 0.6514156
+iteration: 3500 	reduced loss: 0.5585414 	loss: 0.5585414
+iteration: 4000 	reduced loss: 0.6845348 	loss: 0.6845348
+iteration: 4500 	reduced loss: 0.6633362 	loss: 0.6633362
+iteration: 5000 	reduced loss: 0.7054299 	loss: 0.7054299
+iteration: 5500 	reduced loss: 0.7483755 	loss: 0.7483755
+iteration: 6000 	reduced loss: 0.6900500 	loss: 0.6900500
+iteration: 6500 	reduced loss: 0.5160579 	loss: 0.5160579
+iteration: 7000 	reduced loss: 0.5820520 	loss: 0.5820520
+iteration: 7500 	reduced loss: 0.5430921 	loss: 0.5430921
+iteration: 8000 	reduced loss: 0.3962933 	loss: 0.3962933
+iteration: 8500 	reduced loss: 0.5526154 	loss: 0.5526154
+iteration: 9000 	reduced loss: 0.4661254 	loss: 0.4661254
+iteration: 9500 	reduced loss: 0.4438520 	loss: 0.4438520
+iteration: 10000 	reduced loss: 0.6210854 	loss: 0.6210854
+model at iteration 10000 is saved
+iteration: 10500 	reduced loss: 0.5949931 	loss: 0.5949931
+iteration: 11000 	reduced loss: 0.4638317 	loss: 0.4638317
+iteration: 11500 	reduced loss: 0.3975917 	loss: 0.3975917
+iteration: 12000 	reduced loss: 0.5138940 	loss: 0.5138940
+iteration: 12500 	reduced loss: 0.3475267 	loss: 0.3475267
+iteration: 13000 	reduced loss: 0.3977151 	loss: 0.3977151
+iteration: 13500 	reduced loss: 0.3759065 	loss: 0.3759065
+iteration: 14000 	reduced loss: 0.4049486 	loss: 0.4049486
+iteration: 14500 	reduced loss: 0.6199306 	loss: 0.6199306
+iteration: 15000 	reduced loss: 0.3112024 	loss: 0.3112024
+iteration: 15500 	reduced loss: 0.4110090 	loss: 0.4110090
+iteration: 16000 	reduced loss: 0.5326357 	loss: 0.5326357
+iteration: 16500 	reduced loss: 0.3896612 	loss: 0.3896612
+iteration: 17000 	reduced loss: 0.4881201 	loss: 0.4881201
+iteration: 17500 	reduced loss: 0.4069792 	loss: 0.4069792
+iteration: 18000 	reduced loss: 0.3379099 	loss: 0.3379099
+iteration: 18500 	reduced loss: 0.3961149 	loss: 0.3961149
+iteration: 19000 	reduced loss: 0.4238186 	loss: 0.4238186
+iteration: 19500 	reduced loss: 0.4402026 	loss: 0.4402026

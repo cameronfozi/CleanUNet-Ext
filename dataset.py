@@ -20,6 +20,23 @@ np.random.seed(0)
 from torchvision import datasets, models, transforms
 import torchaudio
 
+import yaml
+from easydict import EasyDict as ed
+
+torch.autograd.set_detect_anomaly(True)
+
+# WATERMARKING FUNCTIONS
+from watermark.echo_hiding import encode, decode, create_filter_bank
+# CONFIG YAML
+with open("watermark/echo_config.yaml", encoding="utf-8") as f:
+    contents = yaml.load(f, Loader=yaml.FullLoader)
+config = ed(contents)
+filter_bank = create_filter_bank(config.kernel, config.delays, config.amplitude)
+
+# WATERMARKING FLAG
+WATERMARK = config.weight
+print("WATERMARK WEIGHT IN DATASET:", WATERMARK)
+
 
 class CleanNoisyPairDataset(Dataset):
     """
@@ -40,7 +57,8 @@ class CleanNoisyPairDataset(Dataset):
 
         if subset == "training":
             self.files = [(os.path.join(root, 'training_set/clean', 'fileid_{}.wav'.format(i)),
-                           os.path.join(root, 'training_set/noisy', 'fileid_{}.wav'.format(i))) for i in range(N_clean)]
+                           os.path.join(root, 'training_set/noisy', 'fileid_{}.wav'.format(i)),
+                           os.path.join(root, 'training_set/noise', 'fileid_{}.wav'.format(i))) for i in range(N_clean)]
         
         elif subset == "testing":
             sortkey = lambda name: '_'.join(name.split('_')[-2:])  # specific for dns due to test sample names
@@ -76,7 +94,31 @@ class CleanNoisyPairDataset(Dataset):
         if self.subset != 'testing' and crop_length > 0:
             start = np.random.randint(low=0, high=len(clean_audio) - crop_length + 1)
             clean_audio = clean_audio[start:(start + crop_length)]
-            noisy_audio = noisy_audio[start:(start + crop_length)]
+
+            # ADD WATERMARKING BELOW
+            if WATERMARK > 0:
+                assert len(clean_audio) % config.win_size == 0, "Audio length must be an integer multiple of the window size" # make sure the audio length is an integer multiple of the window size
+                assert len(clean_audio) // config.win_size == len(config.prior_symbols), "Number of windows in audio must match length of prior_symbols list"
+                encoded_audio = encode(
+                    clean_audio.cpu().numpy(), 
+                    config.prior_symbols, 
+                    config.amplitude, 
+                    config.delays, 
+                    config.win_size, 
+                    config.kernel, 
+                    filters = filter_bank, 
+                    hanning_factor = config.hanning_factor)
+
+                clean_audio = torch.from_numpy(encoded_audio).to(clean_audio.device, clean_audio.dtype)
+
+                noise, sample_rate = torchaudio.load(fileid[2])
+                noise = noise.squeeze(0)
+                noise_cropped = noise[start:(start + crop_length)] 
+                noisy_audio = clean_audio + noise_cropped
+            # ADD WATERMARKING ABOVE
+
+            else:
+                noisy_audio = noisy_audio[start:(start + crop_length)]
         
         clean_audio, noisy_audio = clean_audio.unsqueeze(0), noisy_audio.unsqueeze(0)
         return (clean_audio, noisy_audio, fileid)

@@ -1,0 +1,8 @@
+WATERMARK WEIGHT IN DATASET: 0
+WATERMARK WEIGHT IN UTIL: 0
+WATERMARK WEIGHT IN TRAIN: 0
+Initializing Distributed
+Data loaded
+CleanUNet Parameters: 46.071937M;  
+Model at iteration 10000 has been trained for 9571 seconds
+checkpoint model loaded successfully

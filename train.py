@@ -51,6 +51,22 @@ from util import rescale, find_max_epoch, print_size
 from util import LinearWarmupCosineDecay, loss_fn
 
 from network import CleanUNet
+import yaml
+from easydict import EasyDict as ed
+
+torch.autograd.set_detect_anomaly(True)
+
+# CONFIG YAML
+with open("watermark/echo_config.yaml", encoding="utf-8") as f:
+    contents = yaml.load(f, Loader=yaml.FullLoader)
+config = ed(contents)
+
+# WATERMARKING FLAG
+WATERMARK = config.weight
+print("WATERMARK WEIGHT IN TRAIN:", WATERMARK)
+
+# WATERMARKING LOSS
+from watermark.differentiable_decoding import TimeDomainDecodingLoss
 
 
 def train(num_gpus, rank, group_name, 
@@ -157,6 +173,7 @@ def train(num_gpus, rank, group_name,
             optimizer.zero_grad()
             X = (clean_audio, noisy_audio)
             loss, loss_dic = loss_fn(net, X, **loss_config, mrstftloss=mrstftloss)
+            
             if num_gpus > 1:
                 reduced_loss = reduce_tensor(loss.data, num_gpus).item()
             else:
@@ -168,8 +185,14 @@ def train(num_gpus, rank, group_name,
 
             # output to log
             if n_iter % log["iters_per_valid"] == 0:
-                print("iteration: {} \treduced loss: {:.7f} \tloss: {:.7f}".format(
-                    n_iter, reduced_loss, loss.item()), flush=True)
+
+                if WATERMARK > 0:
+                    print("iteration: {} \treduced loss: {:.7f} \tloss: {:.7f} \tdecoding_loss: {:.7f}".format(
+                        n_iter, reduced_loss, loss.item(), loss_dic["decoding_loss"]), flush=True)
+
+                elif WATERMARK == 0:
+                    print("iteration: {} \treduced loss: {:.7f} \tloss: {:.7f}".format(
+                        n_iter, reduced_loss, loss.item()), flush=True)
                 
                 if rank == 0:
                     # save to tensorboard

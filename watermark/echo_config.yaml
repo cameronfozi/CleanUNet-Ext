@@ -1,0 +1,13 @@
+sample_rate: 16000 # make sure this matches CleanUNet's intended sample rate
+delays: [24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54]
+amplitude: 0.4
+win_size: 4000 # you should make sure that CleanUNet's crop_length_sec * sample_rate is divisible by this value
+kernel: "bp"
+decoding: "cepstrum" 
+cutoff_freq: 1000
+hanning_factor: 4
+softargmax_beta : 10000000 
+weight: 0
+
+# make sure that the length of this list is == ( crop_length_sec * sample_rate) / win_size!!!
+prior_symbols: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1, 2, 3, 4, 5, 6, 7, 8] 
