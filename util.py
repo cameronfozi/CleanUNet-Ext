@@ -227,13 +227,14 @@ def loss_fn(net, X, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs):
         B = denoised_audio.shape[0]
         symbols_batch = symbols.unsqueeze(0).repeat(B, 1)  # flatten to match decoder expectation
 
-        sym_err_loss, _, _, _, _ = differentiable_decoder(
+        sym_err_loss, sym_err_rate, _, _, _ = differentiable_decoder(
             denoised_audio, 
             symbols_batch.to(device), 
             torch.tensor([0]).to(device), 
             torch.tensor([0]).to(device)
-            )
+        )
         loss += WATERMARK * sym_err_loss
+        output_dic["ber"] = sym_err_rate.data
         output_dic["decoding_loss"] = sym_err_loss.data * WATERMARK
 
 

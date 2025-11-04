@@ -159,7 +159,7 @@ def train(num_gpus, rank, group_name,
 
     while n_iter < optimization["n_iters"] + 1:
         # for each epoch
-        for clean_audio, noisy_audio, _ in trainloader: 
+        for i, (clean_audio, noisy_audio, _) in enumerate(trainloader): 
             
             clean_audio = clean_audio.cuda()
             noisy_audio = noisy_audio.cuda()
@@ -184,20 +184,29 @@ def train(num_gpus, rank, group_name,
             optimizer.step()
 
             # output to log
-            if n_iter % log["iters_per_valid"] == 0:
-
+            if i % log["log_every"] == 0:
+                log_message = f"Iteration {n_iter}:\tReduced Total Loss: {reduced_loss:.3f}\tTotal Loss: {loss.item():.3f}"
+                for key, value in loss_dic.items():
+                    log_message += f"\t{key}: {value:.3f}"
                 if WATERMARK > 0:
-                    print("iteration: {} \treduced loss: {:.7f} \tloss: {:.7f} \tdecoding_loss: {:.7f}".format(
-                        n_iter, reduced_loss, loss.item(), loss_dic["decoding_loss"]), flush=True)
+                    # report loss minus decoding loss
+                    log_message += f"\tMinDecoding Loss: {reduced_loss - loss_dic['decoding_loss']:.3f}"
+                print(log_message, flush=True)
 
-                elif WATERMARK == 0:
-                    print("iteration: {} \treduced loss: {:.7f} \tloss: {:.7f}".format(
-                        n_iter, reduced_loss, loss.item()), flush=True)
+                # if WATERMARK > 0:
+                #     print("iteration: {} \treduced total loss: {:.7f} \ttotal loss: {:.7f} \tdecoding_loss: {:.7f}".format(
+                #         n_iter, reduced_loss, loss.item(), loss_dic["decoding_loss"]), flush=True)
+                # elif WATERMARK == 0:
+                #     print("iteration: {} \treduced total loss: {:.7f} \ttotal loss: {:.7f}".format(
+                #         n_iter, reduced_loss, loss.item()), flush=True)
                 
                 if rank == 0:
                     # save to tensorboard
                     tb.add_scalar("Train/Train-Loss", loss.item(), n_iter)
                     tb.add_scalar("Train/Train-Reduced-Loss", reduced_loss, n_iter)
+                    tb.add_scalar("Train/MinDecoding-Loss", reduced_loss - loss_dic['decoding_loss'], n_iter)
+                    for key, value in loss_dic.items():
+                        tb.add_scalar(f"Train/{key}", value, n_iter)
                     tb.add_scalar("Train/Gradient-Norm", grad_norm, n_iter)
                     tb.add_scalar("Train/learning-rate", optimizer.param_groups[0]["lr"], n_iter)
 
@@ -206,7 +215,7 @@ def train(num_gpus, rank, group_name,
                 checkpoint_name = '{}.pkl'.format(n_iter)
                 torch.save({'iter': n_iter,
                             'model_state_dict': net.state_dict(),
-                            'optimizer_state_dict': optimizer.state_dict(),
+                             'optimizer_state_dict': optimizer.state_dict(),
                             'training_time_seconds': int(time.time()-time0)}, 
                             os.path.join(ckpt_directory, checkpoint_name))
                 print('model at iteration %s is saved' % n_iter)

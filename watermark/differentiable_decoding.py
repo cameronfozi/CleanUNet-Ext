@@ -94,7 +94,7 @@ class TimeDomainDecodingLoss(DecodingLoss):
         # highpass filter if required
         if self.cutoff_freq is not None:
             audio_batch = highpass_biquad(audio_batch, self.sample_rate, self.cutoff_freq) 
-     
+      
      
         num_wins = audio_batch.shape[2] // self.win_size
         max_audio_len = num_wins * self.win_size
@@ -108,7 +108,7 @@ class TimeDomainDecodingLoss(DecodingLoss):
         
         # compute symbols for all windows 
         all_pred_symbols = torch.vmap(self.compute_symbol)(all_windows) # apply compute_symbol to each window in all_windows
-  
+
         # compute sym error rate and avg error rate (NOT DIFFERENTIABLE), for logging purposes
         all_gt_symbols = gt_symbols_batch.reshape(-1) # (batch_size, num_symbols) -> (batch_size * num_wins)
         accuracy = Accuracy(task="multiclass", num_classes=len(self.delays)).to(audio_batch.device)
@@ -129,6 +129,17 @@ class TimeDomainDecodingLoss(DecodingLoss):
         all_gt_symbols = gt_symbols_batch.reshape(-1) # (batch_size, num_symbols) -> (batch_size * num_wins)
         sym_err_loss_fn = nn.CrossEntropyLoss()
         sym_err_loss = sym_err_loss_fn(cep_vals, all_gt_symbols)
+
+        # print("------- HI ---------")
+        # print("audio_batch shape:", audio_batch.shape)
+        # print("gt_symbols_batch shape:", gt_symbols_batch.shape)
+        # print(all_windows.shape)
+        # print(all_pred_symbols[0, :10])
+        # print(gt_symbols_batch[0, :10])
+        # print(sym_err_rate)
+        # print(sym_err_loss)
+        # print("----------------------")
+     
 
         # compute ground truth symbol error rate for reverb and non-reverb, for logging purposes
         no_reverb_sym_err_rate = torch.sum(num_errs_no_reverb_batch) / (audio_batch.shape[0] * num_wins)
