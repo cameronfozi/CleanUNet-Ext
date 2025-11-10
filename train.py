@@ -204,7 +204,8 @@ def train(num_gpus, rank, group_name,
                     # save to tensorboard
                     tb.add_scalar("Train/Train-Loss", loss.item(), n_iter)
                     tb.add_scalar("Train/Train-Reduced-Loss", reduced_loss, n_iter)
-                    tb.add_scalar("Train/MinDecoding-Loss", reduced_loss - loss_dic['decoding_loss'], n_iter)
+                    if WATERMARK > 0:
+                        tb.add_scalar("Train/MinDecoding-Loss", reduced_loss - loss_dic['decoding_loss'], n_iter)
                     for key, value in loss_dic.items():
                         tb.add_scalar(f"Train/{key}", value, n_iter)
                     tb.add_scalar("Train/Gradient-Norm", grad_norm, n_iter)

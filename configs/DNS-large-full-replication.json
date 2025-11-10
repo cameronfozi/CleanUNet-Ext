@@ -18,7 +18,8 @@
             "directory": "./exp",
             "ckpt_iter": "max",
             "iters_per_ckpt": 10000,
-            "iters_per_valid": 500
+            "iters_per_valid": 500,
+            "log_every" : 20
         },
         "optimization":{
             "n_iters": 140000,
