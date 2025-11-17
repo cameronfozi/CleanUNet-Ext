@@ -1,37 +1,9 @@
-WATERMARK WEIGHT IN DATASET: 0
-WATERMARK WEIGHT IN UTIL: 0
-WATERMARK WEIGHT IN TRAIN: 0
+WATERMARK WEIGHT IN DATASET: 0.01
+WATERMARK WEIGHT IN UTIL: 0.01
+WATERMARK WEIGHT IN TRAIN: 0.01
 Initializing Distributed
 Data loaded
 CleanUNet Parameters: 46.071937M;  
-Model at iteration 10000 has been trained for 9571 seconds
-checkpoint model loaded successfully
-mobilex:4051277:4051277 [3] NCCL INFO cudaDriverVersion 12050
-mobilex:4051277:4051277 [3] NCCL INFO Bootstrap: Using enp68s0:128.59.19.230<0>
-mobilex:4051277:4051277 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
-mobilex:4051277:4051277 [3] NCCL INFO Comm config Blocking set to 1
-mobilex:4051277:4051961 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
-mobilex:4051277:4051961 [3] NCCL INFO NET/IB : No device found.
-mobilex:4051277:4051961 [3] NCCL INFO NET/IB : Using [RO]; OOB enp68s0:128.59.19.230<0>
-mobilex:4051277:4051961 [3] NCCL INFO NET/Socket : Using [0]enp68s0:128.59.19.230<0> [1]wlp69s0:192.168.0.9<0> [2]virbr0:192.168.122.1<0> [3]zt6ovqbhyl:10.147.20.1<0>
-mobilex:4051277:4051961 [3] NCCL INFO Initialized NET plugin Socket
-mobilex:4051277:4051961 [3] NCCL INFO Assigned NET plugin Socket to comm
-mobilex:4051277:4051961 [3] NCCL INFO Using network Socket
-mobilex:4051277:4051961 [3] NCCL INFO ncclCommInitRankConfig comm 0x58dfbd151640 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 4d000 commId 0xa3ecef0799f338c7 - Init START
-mobilex:4051277:4051961 [3] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
-mobilex:4051277:4051961 [3] NCCL INFO Bootstrap timings total 0.019938 (create 0.000029, send 0.000132, recv 0.000288, ring 0.000081, delay 0.000000)
-mobilex:4051277:4051961 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
-mobilex:4051277:4051961 [3] NCCL INFO comm 0x58dfbd151640 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
-mobilex:4051277:4051961 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2
-mobilex:4051277:4051961 [3] NCCL INFO P2P Chunksize set to 131072
-mobilex:4051277:4051961 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
-mobilex:4051277:4051968 [3] NCCL INFO [Proxy Service] Device 3 CPU core 34
-mobilex:4051277:4051972 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 24
-mobilex:4051277:4051961 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
-mobilex:4051277:4051961 [3] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
-mobilex:4051277:4051961 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
-mobilex:4051277:4051961 [3] NCCL INFO ncclCommInitRankConfig comm 0x58dfbd151640 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 4d000 commId 0xa3ecef0799f338c7 - Init COMPLETE
-mobilex:4051277:4051961 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.18 (kernels 0.14, alloc 0.00, bootstrap 0.02, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
-mobilex:4051277:4051978 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
-mobilex:4051277:4051978 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
-mobilex:4051277:4051978 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+No valid checkpoint model found, start training from initialization.
+Iteration 0:	Reduced Total Loss: 1.788	Total Loss: 1.743	ber: 0.572	decoding_loss: 0.272	reconstruct: 0.035	stft_sc: 0.490	stft_mag: 0.945	MinDecoding Loss: 1.516
+Iteration 20:	Reduced Total Loss: 1.682	Total Loss: 1.626	ber: 0.575	decoding_loss: 0.189	reconstruct: 0.038	stft_sc: 0.490	stft_mag: 0.910	MinDecoding Loss: 1.493

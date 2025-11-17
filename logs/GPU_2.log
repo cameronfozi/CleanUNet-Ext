@@ -1,8 +1,9 @@
-WATERMARK WEIGHT IN DATASET: 0
-WATERMARK WEIGHT IN UTIL: 0
-WATERMARK WEIGHT IN TRAIN: 0
+WATERMARK WEIGHT IN DATASET: 0.01
+WATERMARK WEIGHT IN UTIL: 0.01
+WATERMARK WEIGHT IN TRAIN: 0.01
 Initializing Distributed
 Data loaded
 CleanUNet Parameters: 46.071937M;  
-Model at iteration 10000 has been trained for 9571 seconds
-checkpoint model loaded successfully
+No valid checkpoint model found, start training from initialization.
+Iteration 0:	Reduced Total Loss: 1.788	Total Loss: 1.802	ber: 0.637	decoding_loss: 0.306	reconstruct: 0.029	stft_sc: 0.490	stft_mag: 0.976	MinDecoding Loss: 1.481
+Iteration 20:	Reduced Total Loss: 1.682	Total Loss: 1.615	ber: 0.637	decoding_loss: 0.215	reconstruct: 0.028	stft_sc: 0.491	stft_mag: 0.882	MinDecoding Loss: 1.468
