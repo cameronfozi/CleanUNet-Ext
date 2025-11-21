@@ -56,15 +56,17 @@ from easydict import EasyDict as ed
 
 torch.autograd.set_detect_anomaly(True)
 
+# WATERMARKING FUNCTIONS
+from watermark.echo_hiding import encode, decode, create_filter_bank
 # CONFIG YAML
 with open("watermark/echo_config.yaml", encoding="utf-8") as f:
     contents = yaml.load(f, Loader=yaml.FullLoader)
-config = ed(contents)
-
+watermark_config = ed(contents)
 # WATERMARKING FLAG
-WATERMARK = config.weight
+WATERMARK = watermark_config.weight
+DELAY = watermark_config.delay
 print("WATERMARK WEIGHT IN TRAIN:", WATERMARK)
-
+print("WATERMARK DELAY IN TRAIN:", DELAY)
 # WATERMARKING LOSS
 from watermark.differentiable_decoding import TimeDomainDecodingLoss
 
@@ -159,7 +161,7 @@ def train(num_gpus, rank, group_name,
 
     while n_iter < optimization["n_iters"] + 1:
         # for each epoch
-        for i, (clean_audio, noisy_audio, _) in enumerate(trainloader): 
+        for i, (clean_audio, noisy_audio, _, symbols) in enumerate(trainloader): 
             
             clean_audio = clean_audio.cuda()
             noisy_audio = noisy_audio.cuda()
@@ -171,9 +173,9 @@ def train(num_gpus, rank, group_name,
 
             # back-propagation
             optimizer.zero_grad()
-            X = (clean_audio, noisy_audio)
-            loss, loss_dic = loss_fn(net, X, **loss_config, mrstftloss=mrstftloss)
-            
+            X = (clean_audio, noisy_audio, symbols)
+            loss, loss_dic = loss_fn(net, X, n_iter, **loss_config, mrstftloss=mrstftloss)
+
             if num_gpus > 1:
                 reduced_loss = reduce_tensor(loss.data, num_gpus).item()
             else:
@@ -188,7 +190,7 @@ def train(num_gpus, rank, group_name,
                 log_message = f"Iteration {n_iter}:\tReduced Total Loss: {reduced_loss:.3f}\tTotal Loss: {loss.item():.3f}"
                 for key, value in loss_dic.items():
                     log_message += f"\t{key}: {value:.3f}"
-                if WATERMARK > 0:
+                if WATERMARK > 0 and n_iter >= DELAY:
                     # report loss minus decoding loss
                     log_message += f"\tMinDecoding Loss: {reduced_loss - loss_dic['decoding_loss']:.3f}"
                 print(log_message, flush=True)
@@ -204,7 +206,7 @@ def train(num_gpus, rank, group_name,
                     # save to tensorboard
                     tb.add_scalar("Train/Train-Loss", loss.item(), n_iter)
                     tb.add_scalar("Train/Train-Reduced-Loss", reduced_loss, n_iter)
-                    if WATERMARK > 0:
+                    if WATERMARK > 0 and n_iter >= DELAY:
                         tb.add_scalar("Train/MinDecoding-Loss", reduced_loss - loss_dic['decoding_loss'], n_iter)
                     for key, value in loss_dic.items():
                         tb.add_scalar(f"Train/{key}", value, n_iter)

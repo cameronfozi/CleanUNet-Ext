@@ -90,38 +90,18 @@ class CleanNoisyPairDataset(Dataset):
         crop_length = int(self.crop_length_sec * sample_rate)
         assert crop_length < len(clean_audio)
 
+        symbols = ""
+
         # random crop
         if self.subset != 'testing' and crop_length > 0:
             start = np.random.randint(low=0, high=len(clean_audio) - crop_length + 1)
             clean_audio = clean_audio[start:(start + crop_length)]
+            noisy_audio = noisy_audio[start:(start + crop_length)]
 
-            # ADD WATERMARKING BELOW
-            if WATERMARK > 0:
-                assert len(clean_audio) % config.win_size == 0, "Audio length must be an integer multiple of the window size" # make sure the audio length is an integer multiple of the window size
-                assert len(clean_audio) // config.win_size == len(config.prior_symbols), "Number of windows in audio must match length of prior_symbols list"
-                encoded_audio = encode(
-                    clean_audio.cpu().numpy(), 
-                    config.prior_symbols, 
-                    config.amplitude, 
-                    config.delays, 
-                    config.win_size, 
-                    config.kernel, 
-                    filters = filter_bank, 
-                    hanning_factor = config.hanning_factor)
+            symbols, _ = decode(clean_audio, config.delays, config.win_size, config.sample_rate, cutoff_freq=config.cutoff_freq)
 
-                clean_audio = torch.from_numpy(encoded_audio).to(clean_audio.device, clean_audio.dtype)
-
-                noise, sample_rate = torchaudio.load(fileid[2])
-                noise = noise.squeeze(0)
-                noise_cropped = noise[start:(start + crop_length)] 
-                noisy_audio = clean_audio + noise_cropped
-            # ADD WATERMARKING ABOVE
-
-            else:
-                noisy_audio = noisy_audio[start:(start + crop_length)]
-        
         clean_audio, noisy_audio = clean_audio.unsqueeze(0), noisy_audio.unsqueeze(0)
-        return (clean_audio, noisy_audio, fileid)
+        return (clean_audio, noisy_audio, fileid, symbols)
 
     def __len__(self):
         return len(self.files)
@@ -159,4 +139,3 @@ if __name__ == '__main__':
         noisy_audio = noisy_audio.cuda()
         print(clean_audio.shape, noisy_audio.shape, fileid)
         break
-    

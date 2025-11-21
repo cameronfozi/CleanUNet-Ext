@@ -16,12 +16,17 @@ from easydict import EasyDict as ed
 
 # WATERMARKING FUNCTIONS
 from watermark.differentiable_decoding import TimeDomainDecodingLoss
+# WATERMARKING FUNCTIONS
+from watermark.echo_hiding import encode, decode, create_filter_bank
 
 with open("watermark/echo_config.yaml", encoding="utf-8") as f:
     contents = yaml.load(f, Loader=yaml.FullLoader)
 config = ed(contents)
 WATERMARK = config.weight
+DELAY = config.delay
 print("WATERMARK WEIGHT IN UTIL:", WATERMARK)
+print("WATERMARK DELAY IN UTIL:", DELAY)
+
 
 symbols = config.prior_symbols
 symbols = torch.tensor(symbols, dtype=torch.long)
@@ -194,7 +199,7 @@ def sampling(net, noisy_audio):
     return net(noisy_audio)
 
 
-def loss_fn(net, X, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs):
+def loss_fn(net, X, n_iter, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs): # Added parameter n_iter
     """
     Loss function in CleanUNet
 
@@ -211,9 +216,9 @@ def loss_fn(net, X, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs):
     output_dic: values of each component of loss
     """
 
-    assert type(X) == tuple and len(X) == 2
+    assert type(X) == tuple and len(X) == 3
     
-    clean_audio, noisy_audio = X
+    clean_audio, noisy_audio, symbols = X
     B, C, L = clean_audio.shape
     output_dic = {}
     loss = 0.0
@@ -221,11 +226,15 @@ def loss_fn(net, X, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs):
     # AE loss
     denoised_audio = net(noisy_audio)
 
-    if WATERMARK > 0:
+    if WATERMARK > 0 and n_iter >= DELAY:
 
+        if n_iter == DELAY:
+            print("Incorporating watermark loss at iteration:", n_iter)
+        
         device = denoised_audio.device
         B = denoised_audio.shape[0]
-        symbols_batch = symbols.unsqueeze(0).repeat(B, 1)  # flatten to match decoder expectation
+        symbols = torch.stack(symbols)
+        symbols_batch = symbols.T
 
         sym_err_loss, sym_err_rate, _, _, _ = differentiable_decoder(
             denoised_audio, 
@@ -237,6 +246,13 @@ def loss_fn(net, X, ell_p, ell_p_lambda, stft_lambda, mrstftloss, **kwargs):
         output_dic["ber"] = sym_err_rate.data
         output_dic["decoding_loss"] = sym_err_loss.data * WATERMARK
 
+        # test_sym_err_loss, test_sym_err_rate, _, _, _ = differentiable_decoder(
+        #     clean_audio,
+        #     symbols_batch.to(device), 
+        #     torch.tensor([0]).to(device),
+        #     torch.tensor([0]).to(device)
+        # )
+        # print("Watermark Symbol Error Rate on Clean Audio (for reference):", test_sym_err_rate.data)
 
     if ell_p == 2:
         ae_loss = nn.MSELoss()(denoised_audio, clean_audio)

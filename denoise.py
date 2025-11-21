@@ -106,7 +106,7 @@ def denoise(output_directory, ckpt_iter, subset, dump=False):
     all_generated_audio = []
     all_clean_audio = []
     sortkey = lambda name: '_'.join(name.split('/')[-1].split('_')[1:])
-    for clean_audio, noisy_audio, fileid in tqdm(dataloader):
+    for clean_audio, noisy_audio, fileid, _ in tqdm(dataloader):
         filename = sortkey(fileid[0][0])
 
         noisy_audio = noisy_audio.cuda()

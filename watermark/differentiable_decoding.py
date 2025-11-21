@@ -125,7 +125,7 @@ class TimeDomainDecodingLoss(DecodingLoss):
 
         # compute a differentiable metric of symbol error rate using cross-entropy loss
         all_cepstra = torch.vmap(self.torch_get_cepstrum)(all_windows) # apply compute_symbol to each window in all_windows 
-        cep_vals = all_cepstra[:, self.delays]*1000 + 0.0001 # prevent any zeros
+        cep_vals = all_cepstra[:, self.delays]* 1 + 0.0001 # prevent any zeros
         all_gt_symbols = gt_symbols_batch.reshape(-1) # (batch_size, num_symbols) -> (batch_size * num_wins)
         sym_err_loss_fn = nn.CrossEntropyLoss()
         sym_err_loss = sym_err_loss_fn(cep_vals, all_gt_symbols)

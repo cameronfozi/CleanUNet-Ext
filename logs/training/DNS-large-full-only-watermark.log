@@ -1,0 +1,108 @@
+nohup: ignoring input
+num_gpus: 1
+['train.py', '--config=configs/DNS-large-full-only-watermark.json', '--rank=0', '--group_name=group_2025_11_21-152154']
+WATERMARK WEIGHT IN DATASET: 1
+WATERMARK WEIGHT IN UTIL: 1
+WATERMARK DELAY IN UTIL: 0
+WATERMARK WEIGHT IN TRAIN: 1
+WATERMARK DELAY IN TRAIN: 0
+exp_path: DNS-large-full-only-watermark
+ckpt_directory:  ./exp/DNS-large-full-only-watermark/checkpoint
+Data loaded
+CleanUNet Parameters: 46.071937M;  
+No valid checkpoint model found, start training from initialization.
+Incorporating watermark loss at iteration: 0
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Iteration 0:	Reduced Total Loss: 2.750	Total Loss: 2.750	ber: 0.766	decoding_loss: 2.750	MinDecoding Loss: 0.000
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0063, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0156, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0063, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0094, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0031, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Iteration 20:	Reduced Total Loss: 2.753	Total Loss: 2.753	ber: 0.819	decoding_loss: 2.753	MinDecoding Loss: 0.000
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0031, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0031, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Iteration 40:	Reduced Total Loss: 2.756	Total Loss: 2.756	ber: 0.822	decoding_loss: 2.756	MinDecoding Loss: 0.000
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0031, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Iteration 60:	Reduced Total Loss: 2.751	Total Loss: 2.751	ber: 0.791	decoding_loss: 2.751	MinDecoding Loss: 0.000
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0125, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0.0063, device='cuda:0')
+Watermark Symbol Error Rate on Clean Audio (for reference): tensor(0., device='cuda:0')
+Traceback (most recent call last):
+  File "/home/cameron/cleanunet-ext/train.py", line 269, in <module>
+    train(num_gpus, args.rank, args.group_name, **train_config)
+  File "/home/cameron/cleanunet-ext/train.py", line 177, in train
+    loss, loss_dic = loss_fn(net, X, n_iter, **loss_config, mrstftloss=mrstftloss)
+  File "/home/cameron/cleanunet-ext/util.py", line 241, in loss_fn
+    symbols_batch.to(device), 
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/cameron/cleanunet-ext/distributed.py", line 189, in <module>
+    main(args.config, args.stdout_dir, args.args_str)
+  File "/home/cameron/cleanunet-ext/distributed.py", line 176, in main
+    p.wait()
+  File "/usr/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/usr/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/usr/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
